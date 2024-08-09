@@ -1,8 +1,9 @@
-aplikacia eshveba dockeris sashvalebit:
+აპლიკაცია ეშვება დოკერის საშვალებით:
+
 docker-compose build
 docker-compose up --build
 
-swaggeris misamarti : 
+სვაგერის მისამრთი: 
 http://localhost:5002/index.html
 
-matching enginis shemtxvevashi exla chveulebrivad bazidan amowmebs da ise imatcheba orderba, idealur shemtvevashi message brokers gamovikenebdi.
+matching enginis შემთვევაში ამჟამად ბაზიდან ამოწმებს და ისე მაჩავს ორდერებს , იდეალურ შემთხვევაში გამოვიყენებდი MessageBrooker-ს.
