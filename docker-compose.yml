@@ -1,0 +1,31 @@
+﻿version: '3.8'
+
+services:
+  orderapi:
+    build:
+      context: .
+      dockerfile: Orders.API/Dockerfile
+    image: orderapi:latest
+    container_name: orderapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=orderdb;Database=Orders;Username=postgres;Password=postgres
+    ports:
+      - "5002:5001"
+    depends_on:
+      - orderdb
+
+  orderdb:
+    image: postgres:latest
+    container_name: orderdb
+    environment:
+      - POSTGRES_DB=Orders
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - orderdb_data:/var/lib/postgresql/data
+
+volumes:
+  orderdb_data:
